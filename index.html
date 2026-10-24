@@ -2,40 +2,54 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iPhone 8 Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="display">
-            <input type="text" id="result" readonly>
+    <div class="iphone">
+        <div class="status-bar">
+            <span class="time">9:41</span>
+            <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="wifi">📶</span>
+                <span class="battery">🔋</span>
+            </div>
         </div>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendToDisplay('(')">(</button>
-            <button onclick="appendToDisplay(')')">)</button>
-            <button onclick="appendToDisplay('/')">/</button>
-            
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('*')">×</button>
-            
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()" class="equals">=</button>
+        <div class="screen">
+            <div class="calculator">
+                <div class="display">
+                    <div class="previous-operand" id="previous-operand"></div>
+                    <div class="current-operand" id="current-operand">0</div>
+                </div>
+                <div class="buttons">
+                    <button class="btn light" onclick="clearAll()">AC</button>
+                    <button class="btn light" onclick="toggleSign()">+/-</button>
+                    <button class="btn light" onclick="percent()">%</button>
+                    <button class="btn orange" onclick="chooseOperation('/')">÷</button>
+                    
+                    <button class="btn dark" onclick="appendNumber('7')">7</button>
+                    <button class="btn dark" onclick="appendNumber('8')">8</button>
+                    <button class="btn dark" onclick="appendNumber('9')">9</button>
+                    <button class="btn orange" onclick="chooseOperation('*')">×</button>
+                    
+                    <button class="btn dark" onclick="appendNumber('4')">4</button>
+                    <button class="btn dark" onclick="appendNumber('5')">5</button>
+                    <button class="btn dark" onclick="appendNumber('6')">6</button>
+                    <button class="btn orange" onclick="chooseOperation('-')">-</button>
+                    
+                    <button class="btn dark" onclick="appendNumber('1')">1</button>
+                    <button class="btn dark" onclick="appendNumber('2')">2</button>
+                    <button class="btn dark" onclick="appendNumber('3')">3</button>
+                    <button class="btn orange" onclick="chooseOperation('+')">+</button>
+                    
+                    <button class="btn dark zero" onclick="appendNumber('0')">0</button>
+                    <button class="btn dark" onclick="appendNumber('.')">.</button>
+                    <button class="btn orange" onclick="compute()">=</button>
+                </div>
+            </div>
         </div>
+        <div class="home-button"></div>
     </div>
     <script src="script.js"></script>
 </body>

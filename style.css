@@ -1,71 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+.iphone {
+    width: 375px;
+    height: 667px;
+    background: #000;
+    border-radius: 36px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.iphone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 8px solid #333;
+    border-radius: 44px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.iphone::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: #000;
+    border-radius: 36px;
+    z-index: 5;
+}
+
+.status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    color: white;
+    font-size: 14px;
+    z-index: 20;
+}
+
+.status-bar .time {
+    font-weight: 600;
+}
+
+.status-icons {
+    display: flex;
+    gap: 4px;
+}
+
+.screen {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    border-radius: 0 0 36px 36px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 15;
 }
 
 .calculator {
-    background-color: #333;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 300px;
+    width: 100%;
 }
 
 .display {
-    background-color: #eee;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
     text-align: right;
+    padding: 20px 16px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-.display input {
-    width: 100%;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    text-align: right;
-    outline: none;
+.previous-operand {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    min-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.current-operand {
+    color: white;
+    font-size: 64px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px;
+    padding: 12px;
 }
 
-.buttons button {
-    padding: 15px;
-    font-size: 18px;
+.btn {
+    height: 80px;
+    border-radius: 40px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #4a4a4a;
+    font-size: 32px;
+    font-weight: 500;
     color: white;
-    transition: background-color 0.2s;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    background: #333;
 }
 
-.buttons button:hover {
-    background-color: #5a5a5a;
+.btn:active {
+    transform: scale(0.95);
+    opacity: 0.7;
 }
 
-.buttons button:active {
-    background-color: #3a3a3a;
+.btn:active .btn-inner {
+    transform: scale(1.05);
 }
 
-.equals {
-    background-color: #4CAF50;
+.btn.light {
+    background: #a5a5a5;
+    color: #000;
 }
 
-.equals:hover {
-    background-color: #5CB85C;
+.btn.dark {
+    background: #333;
+    color: white;
 }
 
-.equals:active {
-    background-color: #3e8e41;
+.btn.orange {
+    background: #ff9f0a;
+    color: white;
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+.home-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68px;
+    height: 68px;
+    background: white;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    z-index: 20;
+}
+
+.home-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #ddd;
 }

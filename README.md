@@ -1,33 +1,43 @@
-# Calculadora Web
+# iPhone 8 Calculator Emulator
 
-Uma calculadora simples e elegante para realizar operações matemáticas básicas no navegador.
+Um emulador fiel da calculadora do iPhone 8, com design e funcionalidades idênticas ao original.
 
 ## 📌 Funcionalidades
 
-- Adição, subtração, multiplicação e divisão
-- Operações com números decimais
-- Limpar o display (botão C)
-- Design responsivo para mobile e desktop
+- Design exato do iPhone 8 (tela, botão home, status bar)
+- Operações básicas: +, -, ×, ÷
+- Funções especiais: AC, +/-, %, =
+- Suporte a números decimais
+- Display com operandos anterior e atual
+- Animações de pressionar botões
 
 ## 🚀 Como Usar
 
-1. **Acesse o site**: Abra o arquivo `index.html` no seu navegador ou hospede em um servidor web.
-2. **Realize cálculos**: Clique nos botões numéricos e operadores para construir sua expressão.
-3. **Veja o resultado**: Pressione `=` para calcular.
+1. **Acesse o site**: Abra o arquivo `index.html` no seu navegador
+2. **Use a calculadora**: Toque nos botões como em um iPhone real
+3. **Veja o resultado**: O display mostra o cálculo em tempo real
+
+## 📱 Preview
+
+A calculadora tem:
+- Status bar com hora e ícones (9:41, sinal, wifi, bateria)
+- Tela preta com display branco
+- Botões redondos com cores originais do iOS
+- Botão home circular na parte inferior
 
 ## 🛠 Tecnologias
 
 - HTML5
-- CSS3
-- JavaScript (Vanilla)
+- CSS3 (com gradientes e sombras para o efeito iPhone)
+- JavaScript (Vanilla) - Lógica de calculadora completa
 
 ## 📁 Estrutura do Projeto
 
 ```
-calculadora-web/
-├── index.html    # Estrutura HTML
-├── style.css     # Estilos CSS
-├── script.js     # Lógica JavaScript
+iphone-calculator/
+├── index.html    # Estrutura HTML do iPhone
+├── style.css     # Estilos CSS do iPhone 8
+├── script.js     # Lógica da calculadora
 └── README.md     # Este arquivo
 ```
 
